@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity Web Player | PunkWave1993</title>
+    <title>PunkWave1993</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
   </head>
@@ -18,12 +18,11 @@
       </div>
       <div id="unity-warning"> </div>
       <div id="unity-footer">
-        <div id="unity-logo-title-footer"></div>
         <div id="unity-fullscreen-button"></div>
-        <div id="unity-build-title">PunkWave1993</div>
       </div>
     </div>
     <script>
+      var container = document.querySelector("#unity-container");
       var canvas = document.querySelector("#unity-canvas");
 
       // Shows a temporary message banner/ribbon for a few seconds, or
@@ -52,12 +51,12 @@
       }
 
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/e676e8cf20b21ac113ea2d4bc4ccdda1.loader.js";
+      var loaderUrl = buildUrl + "/3354291b0a28a4fb2a585acc551be2a3.loader.js";
       var config = {
         arguments: [],
-        dataUrl: buildUrl + "/e871f73b9613350888794b500efadede.data",
-        frameworkUrl: buildUrl + "/fa59851925f608fbb6d7087830ebf856.framework.js",
-        codeUrl: buildUrl + "/a0606ca01c42a9be5fd671fcb375b626.wasm",
+        dataUrl: buildUrl + "/136f9688271b5fe48da31815fc8ff8a4.data",
+        frameworkUrl: buildUrl + "/f31642ccd28f677864e9d674966a234f.framework.js",
+        codeUrl: buildUrl + "/477699ca709fa1719bf748d87150ecbb.wasm",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "PunkWave1993",
         productName: "PunkWave1993",
@@ -88,7 +87,7 @@
         meta.name = 'viewport';
         meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
         document.getElementsByTagName('head')[0].appendChild(meta);
-        document.querySelector("#unity-container").className = "unity-mobile";
+        container.className = "unity-mobile";
         canvas.className = "unity-mobile";
 
         // To lower canvas resolution on mobile devices to gain some
@@ -98,8 +97,7 @@
 
       } else {
         // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
-        canvas.style.width = "1600px";
-        canvas.style.height = "900px";
+        container.style.width = "1600px";
       }
 
       document.querySelector("#unity-loading-bar").style.display = "block";
